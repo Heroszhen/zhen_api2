@@ -1,0 +1,7 @@
+---prisma
+en local
+npx prisma db pull
+npx prisma migrate dev --name init
+
+en prod
+npx prisma migrate deploys
