@@ -12,10 +12,15 @@ datasource db {
   provider = "mysql"
 }
 
+enum Role {
+  user
+  admin
+}
+
 model User {
   id       String    @id @default(uuid(7)) @db.Char(36)
   email    String    @unique @db.VarChar(180)
-  roles    Json
+  roles    Role      @default(user)
   password String    @db.VarChar(255)
   apiKey   String?   @unique @map("api_key") @db.VarChar(255)
   created  DateTime? @default(now()) @db.DateTime(0)

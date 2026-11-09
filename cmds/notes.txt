@@ -5,3 +5,8 @@ npx prisma migrate dev --name init
 
 en prod
 npx prisma migrate deploys
+
+
+
+npx tsx --env-file-if-exists=.env.local src/commands/create-user.ts admin@test.fr monmotdepasse --admin
+node --env-file-if-exists=.env.local dist/commands/create-user.js admin@test.fr monmotdepasse --admin
